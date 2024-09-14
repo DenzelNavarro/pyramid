@@ -1,6 +1,7 @@
 const character = "#";
 const count = 8;
 const rows = [];
+let inverted = true;
 
 function padRow(rowNumber, rowCount) {
     return " ".repeat(rowCount - rowNumber) + 
@@ -9,6 +10,15 @@ function padRow(rowNumber, rowCount) {
 }
 
 // Different type of loop
+
+// Toggle between an inverted pyramid and a standard pyramid
+for (let i = 1; i <= count; i++) {
+  if (inverted) {
+    rows.unshift(padRow(i, count));
+  } else {
+    rows.push(padRow(i, count));
+  }
+}
 
 // For loop
 /*for (let i = 1; i <= count; i++) {
